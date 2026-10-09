@@ -1,0 +1,93 @@
+{
+  "info": {
+    "_postman_id": "b3e7f411-9a1b-4d62-a50e-consultas-oci",
+    "name": "API RESTful Consultas - U1 EP2",
+    "description": "Colección de pruebas para la API RESTful de la Veterinaria en OCI.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET - Obtener todas las consultas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://139.177.101.157/api/v1/consultas",
+          "protocol": "http",
+          "host": ["139", "177", "101", "157"],
+          "path": ["api", "v1", "consultas"]
+        }
+      }
+    },
+    {
+      "name": "2. GET - Obtener consulta por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://139.177.101.157/api/v1/consultas/1",
+          "protocol": "http",
+          "host": ["139", "177", "101", "157"],
+          "path": ["api", "v1", "consultas", "1"]
+        }
+      }
+    },
+    {
+      "name": "3. POST - Crear nueva consulta",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_mascota\": 1,\n  \"motivo\": \"Vacunación antirrábica y revisión general\",\n  \"diagnostico\": \"Paciente sano en rango adecuado\",\n  \"costo_consulta\": 450.00,\n  \"estado\": \"Programada\"\n}"
+        },
+        "url": {
+          "raw": "http://139.177.101.157/api/v1/consultas",
+          "protocol": "http",
+          "host": ["139", "177", "101", "157"],
+          "path": ["api", "v1", "consultas"]
+        }
+      }
+    },
+    {
+      "name": "4. PUT - Actualizar consulta",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"motivo\": \"Revisión médica completada y vacuna aplicada\",\n  \"diagnostico\": \"Paciente estable en observación\",\n  \"costo_consulta\": 500.00,\n  \"estado\": \"Completada\"\n}"
+        },
+        "url": {
+          "raw": "http://139.177.101.157/api/v1/consultas/1",
+          "protocol": "http",
+          "host": ["139", "177", "101", "157"],
+          "path": ["api", "v1", "consultas", "1"]
+        }
+      }
+    },
+    {
+      "name": "5. DELETE - Eliminar consulta",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://139.177.101.157/api/v1/consultas/1",
+          "protocol": "http",
+          "host": ["139", "177", "101", "157"],
+          "path": ["api", "v1", "consultas", "1"]
+        }
+      }
+    }
+  ]
+}
